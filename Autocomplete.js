@@ -46,7 +46,8 @@ class Autocomplete {
 
   _handleBlur() {
     // Let the li click handler handle click first
-    setTimeout(this.outputEl.hide, 0);
+    // TODO : fix this 200 delay before blur
+    setTimeout(this.outputEl.hide, 200);
   };
 
   _handleInput(e) {
@@ -93,8 +94,10 @@ class Autocomplete {
     outputEl.firstChild.childNodes.forEach((nodeString)=> {
       let stringPartOfNodeValue = nodeString.firstChild.nodeValue.toLowerCase().indexOf(string.toLowerCase()) > -1;
       if (!stringPartOfNodeValue) relevance = false;
+      // TODO: Не возвращает релевантные данные когда в списке и в поле строки совпадают
+      console.log('nodeString.firstChild.nodeValue.toLowerCase() ', nodeString.firstChild.nodeValue.toLowerCase());
+      console.log('str ', string);
     });
-    console.log(relevance);
     return relevance;
   }
 
@@ -133,6 +136,7 @@ class Autocomplete {
     let listItem = document.createElement('li');
     listItem.innerHTML = string;
     listItem.addEventListener('click', function liItemClicked(e) {
+      console.log('clicked');
       this.inputEl.value = e.target.textContent;
       this.outputEl.hide();
     }.bind(this));
