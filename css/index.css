@@ -1,0 +1,26 @@
+#main-input{
+    width: 300px;
+    font-size: 2em;
+}
+
+
+.matched-list{
+    list-style-type: none;
+    font-size: 2em;
+    padding: 0px;
+    margin: 0px;
+}
+
+.matched-list > li{
+    padding: 5px;
+}
+
+.matched-list > li:hover{
+    background-color: #a3a3a3;
+}
+
+label{
+    font-size: 2em;
+}
+
+
