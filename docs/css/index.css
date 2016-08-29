@@ -1,0 +1,16 @@
+#main-input{
+    width: 300px;
+    font-size: 2em;
+    font-family: "Times New Roman";
+}
+
+/*TODO: Нужно переместить это объявление в js*/
+.li-hovered{
+    background-color: #a3a3a3;
+}
+
+label{
+    font-size: 2em;
+}
+
+
